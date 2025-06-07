@@ -47,8 +47,16 @@ int main(int argc, char *argv[])
             break;
         opt = argv[i] + 2;
         if (!strcmp(opt, "16")) {
+            if (format && format != 1) {
+                fprintf(stderr, "Conflicting options --16 and --32 used\n");
+                return 1;
+            }
             format = 1;
         } else if (!strcmp(opt, "32")) {
+            if (format && format != 2) {
+                fprintf(stderr, "Conflicting options --16 and --32 used\n");
+                return 1;
+            }
             format = 2;
         } else if (!strcmp(opt, "help")) {
             fputs(HELP, stderr);
