@@ -37,13 +37,13 @@ eaw_makeset(unsigned int n, unsigned char **names)
     for (i = 0; i < n; ++i) {
         c = eaw_decode(names[i]);
         if (c == (eaw_t)-1) {
-            fprintf(stderr, "Invalid east Asian width: %s",
+            fprintf(stderr, "Invalid east Asian width: %s\n",
                     (char *)names[i]);
             exit(1);
         }
         m = 1U << (unsigned)c;
         if (s & m) {
-            fprintf(stderr, "Warning: duplicate east Asian width %s",
+            fprintf(stderr, "Warning: duplicate east Asian width %s\n",
                     (char *)names[i]);
         }
         s |= m;
