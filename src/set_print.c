@@ -59,7 +59,8 @@ set_print_n(FILE *f, struct set *x, int planes, unsigned int mask)
             }
         }
     }
-    putc('\n', f);
+    if (planes || plane)
+        putc('\n', f);
 }
 
 void
