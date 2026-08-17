@@ -23,4 +23,4 @@ uniset_SOURCES = \
 	src/token.h \
 	src/uniset.c
 
-EXTRA_DIST = README.txt HACKING.txt
+EXTRA_DIST = README.md HACKING.txt
