@@ -1,7 +1,7 @@
 dnl#                                               -*- Autoconf -*-
 dnl# Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.73])
+AC_PREREQ([2.61])
 AC_INIT([uniset],[0.1],[depp@zdome.net])
 AM_INIT_AUTOMAKE([1.5 foreign subdir-objects nostdinc])
 AC_CONFIG_SRCDIR([src/token.h])
