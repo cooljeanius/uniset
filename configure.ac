@@ -11,7 +11,16 @@ AC_PROG_CC dnl# specifying "_99" specifically is obsolete now
 ENABLE_WARNINGS
 
 # Checks for header files.
-AC_CHECK_HEADERS([fcntl.h stdint.h unistd.h])
+AC_CHECK_HEADERS([fcntl.h])
+
+if test "x${ac_cv_header_stdint_h}" = "x"; then
+  test -z "${ac_cv_header_stdint_h}" || unset ac_cv_header_stdint_h
+  AC_CHECK_HEADERS([stdint.h])
+fi
+if test "x${ac_cv_header_unistd_h}" = "x"; then
+  test -z "${ac_cv_header_unistd_h}" || unset ac_cv_header_unistd_h
+  AC_CHECK_HEADERS([unistd.h])
+fi
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_INLINE
